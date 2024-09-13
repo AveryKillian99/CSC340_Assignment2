@@ -3,6 +3,7 @@ package CSC_340.Assignment2;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,6 +17,7 @@ public class RestApiController {
      *
      * @return a randomJoke object.
      */
+    @GetMapping("/joke")
     public Object getJoke(@RequestParam(value = "general")String general ) {
         try {
             String url = "https://official-joke-api.appspot.com/random_joke";
